@@ -1,0 +1,36 @@
+n1 = int(input())#solicita a quantidade de aluno/nota
+
+def lista():
+    notas = []
+    
+    for i in range(n1):
+        n2 = float(input()) #solicita a nota
+        notas.append(n2)
+    return notas
+    
+def nota_final(nota_original, nota_nova):
+    qtd_alterado = 0
+    
+    for i in range(len(nota_original)):
+        if nota_nova[i]==10 and nota_original[i]<10: # condiçao, se a segunda nota for igual a 10 e a nota antiga for menor que 10, ele soma 2
+            nota_nova[i] = min(nota_original[i]+2, 10) # na nova nota ela soma 2, se a soma ultrapassar de 10, ele ira apenas guardar o 10, por isso esse ",10"
+            qtd_alterado +=1
+        else: # se a nota for maior ou igual a 10, ela e apenas mantido igual, pois ele ja tem a nota maxima 
+            nota_nova[i] = nota_original[i]
+    
+    return qtd_alterado
+    
+    
+def ex_nota (nota_original, nota_final,qtd_alterado):
+    print(f"NOTAS ALTERADAS: {qtd_alterado}")
+    for i in range(n1):
+        nota_alterada = ("*" if nota_original[i] != nota_final[i] else '-')
+        print(f"{nota_alterada}({i+1:03}) original: {nota_original[i]:05.2f} | final: {nota_final[i]:05.2f}")
+        
+        
+if (1<=n1<=999):
+    nota_original=lista()
+    nota_nova = lista()
+    qtd_alterado = nota_final(nota_original,nota_nova)
+    ex_nota(nota_original, nota_nova, qtd_alterado)
+
