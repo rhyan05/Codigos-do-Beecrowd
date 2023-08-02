@@ -1,0 +1,46 @@
+#lista de dados, tipo 1,2,3
+listaC= input().split()
+
+if listaC != []:
+
+#converter str para int
+  for i in range(len(listaC)):
+    listaC[i] = int(listaC[i])
+    # ['3', '5'] => [3, 5]
+  
+#adicionar
+def adicionar(merc, item):
+  merc.append(item)
+
+#remover
+def remover(merc, item):
+  if item in merc:
+    merc.remove(item)
+  else:
+    print(f"código {item} não encontrado")
+
+#exibir
+def exibir(merc):
+  merc.sort()
+  
+  for i in range(len(merc)):
+    if (i < len(merc)-1):
+      print(merc[i], end=' ')
+    else:
+      print(merc[i])
+
+#funçao de comando
+comando = input().split()
+
+while comando[0] != "encerrar":
+  if (comando[0] == "adicionar"):
+    adicionar(listaC, int(comando[1]))
+  elif (comando[0] == "remover"):
+    remover(listaC, int(comando[1]))
+  else:
+    exibir(listaC)
+
+  comando = input().split()
+
+exibir(listaC)
+#fim
