@@ -1,0 +1,5 @@
+n1= int(input())
+afb = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+if 1<=n1<=26:
+    for i in range(n1):
+        print(afb[i]*(i+1))
