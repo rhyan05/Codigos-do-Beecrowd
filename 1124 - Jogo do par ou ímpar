@@ -1,0 +1,12 @@
+n1 = int(input())
+if n1<2:
+    print("O numero digitado deve ser igual ou maior que dois")
+else:
+    if n1%2 ==1:
+        NI = n1 -2
+        NP = n1+1
+        print(NI, NP)
+    else:
+        NI=n1-1
+        NP=n1+2
+        print(NI, NP)
