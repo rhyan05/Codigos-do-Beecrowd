@@ -1,0 +1,7 @@
+N=int(input())
+cont=1
+while cont<=10:
+    if (0<=N<=10):
+        mult = N*cont
+        print (N,"x",cont,"=", mult)
+        cont+=1
