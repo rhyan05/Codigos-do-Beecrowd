@@ -1,0 +1,40 @@
+dia = input()
+tempoEntrega = int(input())
+diaEmNumero = 0
+
+if(tempoEntrega == 0): 
+  print('chega hoje!')
+else:
+    if dia == 'segunda':
+        diaEmNumero = 0
+    elif dia == 'terca':
+        diaEmNumero = 1
+    elif dia == 'quarta':
+        diaEmNumero = 2
+    elif dia == 'quinta':
+        diaEmNumero = 3
+    elif dia == 'sexta':
+        diaEmNumero = 4
+    elif dia == 'sabado':
+        diaEmNumero = 5
+    elif dia == 'domingo':
+        diaEmNumero = 6
+        
+    diaEntrega = (diaEmNumero + tempoEntrega)%7
+    
+    if diaEntrega == 0:
+        entrega = "segunda"
+    if diaEntrega == 1:
+        entrega = "terca"
+    if diaEntrega == 2:
+        entrega = "quarta"
+    if diaEntrega == 3:
+        entrega = "quinta"
+    if diaEntrega == 4:
+        entrega = "sexta"
+    if diaEntrega == 5:
+        entrega = "sabado"
+    if diaEntrega == 6:
+        entrega = "domingo"
+        
+    print(f"sera entregue {entrega}")
