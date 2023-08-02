@@ -1,0 +1,8 @@
+t_vic = 0
+vic = float(input())
+while vic != -1.0:
+    t_vic+=vic
+    vic = float(input())
+t_real = t_vic * 2.50
+print(f'VC$ {t_vic:.2f}') 
+print(f'R$ {t_real:.2f}')
