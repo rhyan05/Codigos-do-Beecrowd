@@ -1,0 +1,19 @@
+def primo(i):
+    if i < 2:
+        return False
+    for n in range(2, int(i**0.5) + 1):
+        if i % n == 0:
+            return False
+    #print(n)
+    return True
+
+ini = int(input())
+fim = int(input())
+lista = []
+if ini<=fim<=5000:
+    for i in range(ini, fim+1):
+        if primo(i):
+            lista.append(i)
+if len(lista) !=0:
+    print(*lista, sep='\n')
+print(f"primos: {len(lista)}")
