@@ -1,0 +1,54 @@
+def dados_canal(lista):
+  for i in range(lista):
+    nome,viewer,monetizacao,premiun = input().split(";")#pedindo dados do canal
+        #https://www.acervolima.com.br/2021/01/recebendo-varias-entradas-do-usuario-em.html
+
+    # convertendo os dados
+    nome = str(nome)
+    viewer = int(viewer)
+    monetizacao = float(monetizacao)
+    premiun = premiun == "sim"
+
+    # adicionando canal na lista canais
+    canais.append([nome, viewer, monetizacao, premiun])
+
+def mec_bonificacao(S_premium,N_premium):
+  lista_bonificacao = []
+#declarando posiçoes de saida/lista
+  for i in canais:
+    nome = i[0]
+    viewer = i[1]
+    valor_monetizado = i[2]
+    premiun = i[3]
+#calculando os bonus
+    if (premiun):
+      valor_monetizado += viewer // 1000 * S_premium
+    else:
+      valor_monetizado += viewer // 1000 * N_premium
+    
+    lista_bonificacao.append([nome, valor_monetizado])
+
+  return lista_bonificacao
+
+def ex_bonificacao(bonus):
+  print("-----")
+  print("BÔNUS")
+  print("-----")
+#saida
+  for i in bonus:
+    nome = i[0]
+    valor = i[1]
+    print(f"{nome}: R$ {valor:.2f}")
+
+canais = []
+
+# entrada
+qtd_canal = int(input())
+
+if (1 <= qtd_canal <= 200):
+  dados_canal(qtd_canal)
+  
+  S_premium = float(input())
+  N_premium = float(input())
+
+  ex_bonificacao(mec_bonificacao(S_premium, N_premium))
