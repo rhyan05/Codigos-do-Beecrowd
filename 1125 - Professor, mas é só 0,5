@@ -1,0 +1,12 @@
+NT = float(input())
+NP = float(input())
+media =(NT+NP)/2
+if (NT<0) and (NT>10) and( NR<0) and (NP>10):
+    print("insira um número valido de 0 ou 10")
+else:
+    if(media>=6):
+        print("aprovado")
+    elif(NT>=4 and NP>=0 and NP<=5):
+        print("talvez com a sub")
+    else:
+        print("reprovado")
