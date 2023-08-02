@@ -1,0 +1,14 @@
+lista = []
+
+while True:
+    n1 =int(input())
+    if n1<0:
+        break
+    lista.append(n1)
+med = sum(lista)/len(lista)
+
+print(f"MEDIA: {med:.2f}")
+
+for i in lista:
+    if i<med:
+        print(i)
