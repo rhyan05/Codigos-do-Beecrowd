@@ -1,7 +1,6 @@
 def dados_canal(lista):
   for i in range(lista):
     nome,viewer,monetizacao,premiun = input().split(";")#pedindo dados do canal
-        #https://www.acervolima.com.br/2021/01/recebendo-varias-entradas-do-usuario-em.html
 
     # convertendo os dados
     nome = str(nome)
