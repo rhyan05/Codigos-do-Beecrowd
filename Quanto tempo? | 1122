@@ -1,0 +1,5 @@
+soma = 0
+for i in range (3):
+    tempo = int(input())
+    soma +=tempo
+print(f"{soma} minutos")
