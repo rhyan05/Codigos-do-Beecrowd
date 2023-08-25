@@ -6,7 +6,7 @@ def dados_canal(lista):
     nome = str(nome)
     viewer = int(viewer)
     monetizacao = float(monetizacao)
-    premiun = premiun == "sim" #aqui ele ira guardar a informaçao apenas como true e false
+    premiun = premiun == "sim"
 
     # adicionando canal na lista canais
     canais.append([nome, viewer, monetizacao, premiun])
@@ -20,7 +20,7 @@ def mec_bonificacao(S_premium,N_premium):
     valor_monetizado = i[2]
     premiun = i[3]
 #calculando os bonus
-    if (premiun): # if (premiun == True): como ele guarda a informaçao apenas como true ou false, eu nao preciso colocar ese ==, ja que o if sempre executa o True primeiro
+    if (premiun):
       valor_monetizado += viewer // 1000 * S_premium
     else:
       valor_monetizado += viewer // 1000 * N_premium
