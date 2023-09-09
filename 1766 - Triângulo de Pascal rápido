@@ -1,0 +1,11 @@
+def triangulo(L, C, memo={}):
+    if L == 1 or C == 1 or L == C:
+        return 1
+    if (L, C) not in memo:
+        memo[(L, C)] = triangulo(L - 1, C) + triangulo(L - 1, C - 1)
+    return memo[(L, C)]
+L,C = map(int, input().split())
+#L, C =  input().split()
+#L=int(L)
+#C=int(C)
+print(triangulo(L,C))
