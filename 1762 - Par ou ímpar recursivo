@@ -1,0 +1,13 @@
+def par(n):
+    if n == 0:
+        return True
+    elif n == 1:
+        return False
+    else:
+        return par(n - 2)
+
+n = int(input())
+if par(n):
+    print("numero par")
+else:
+    print("numero nao par")
