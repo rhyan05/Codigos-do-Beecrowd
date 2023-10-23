@@ -1,0 +1,20 @@
+def troca(M,notas):
+    #fila = list(zip(notas, range(M))) #criaçao de uma tupla usando zip
+    #usando a comprehension list
+    fila = [
+        (nota,i) for i, nota in enumerate(notas)
+        ]
+    fila.sort(reverse=True)
+    n_troca = 0
+    for i in range (M):
+        if fila[i][1] == i:
+            n_troca+= 1
+    return n_troca
+
+
+N = int(input()) #qtd de casos a serem ordenados/resolvidos
+
+for i in range (N):
+    M = int(input()) #qtd alunos nesse caso
+    notas = list(map(int, input().split())) #notas dos alunos //  a function list tem de ser chamada para entender que toda a separaçao e uma lista de interiso atrelada a ntoas
+    print(troca(M, notas))
