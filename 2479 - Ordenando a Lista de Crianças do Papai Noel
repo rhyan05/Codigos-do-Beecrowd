@@ -1,0 +1,30 @@
+def calcular(compt, nomes):
+    aceito = 0
+    negado = 0
+    for comportamento in compt: #verificar se ele foi bom ou mal
+        if comportamento == '+':
+            aceito += 1
+        elif comportamento == '-':
+            negado += 1
+    return aceito, negado
+
+N = int(input())  # Quantidade de nomes na lista
+if not (0 <= N <= 100):
+    exit()
+
+compt = []
+nomes = []
+
+for i in range(N): #entrada ds valroes
+    comportamento, nome = input().split()
+    compt.append(comportamento)
+    nomes.append(nome)
+
+nomes.sort()
+
+comportados, nao_comportados = calcular(compt, nomes)
+
+for i in range(N):
+    print(nomes[i])
+
+print(f"Se comportaram: {comportados} | Nao se comportaram: {nao_comportados}")
