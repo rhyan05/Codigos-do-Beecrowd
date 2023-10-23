@@ -1,0 +1,12 @@
+N, K = map(int, input().split()) #entrada dos numeros de alunos e qual foi sorteado
+
+if not (1<=K<=N<=100): #verificar se esta dentro dos conformes
+    exit()
+
+nomes = [] 
+for i in range (N):
+    nome = input().lower()# nome dos alunos
+    nomes.append(nome)
+nomes.sort() #deixar tudo em ordem alfabetica
+print(nomes[K-1]) #imprimir o sorteado
+#-1 pq a tabela se inicia no 0, logo se eu so colocar o k ele ira trazer o valor 2 na tabela e nao o valor 1 que e o 0
