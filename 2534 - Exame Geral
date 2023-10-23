@@ -1,0 +1,33 @@
+while True:
+    try:
+        # Ler o número de habitantes e o número de consultas
+        N, Q = map(int, input().split())
+        
+        # Verificar as restrições
+        if not (1 <= N <= 100) or not (1 <= Q <= 100):
+            exit()
+
+        # Ler as notas dos cidadãos
+        notas = [int(input()) for i in range(N)]
+        
+        # Verificar as restrições das notas
+        for nota in notas:
+            if not (0 <= nota <= 30000):
+                exit()
+
+        # Ordenar as notas em ordem decrescente
+        notas.sort(reverse=True)
+        
+        # Processar as consultas
+        for i in range(Q):
+            posicao = int(input())
+            # Verificar a restrição da posição
+            if not (1 <= posicao <= N):
+                exit()
+            # A posição é baseada em 1, então subtrai 1 para obter o índice correto na lista de notas
+            indice = posicao - 1
+            # Imprimir a nota do cidadão na posição especificada
+            print(notas[indice])
+    
+    except EOFError:
+        break
