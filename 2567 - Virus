@@ -1,0 +1,19 @@
+while True:
+    try:
+        N = int(input())  # Quantidade de vírus
+        if not (1 <= N <= 1000):
+            exit()
+        
+        idade = list(map(int, input().split()))  # Idade dos vírus
+        idade.sort()
+        
+        letal = 0
+        for i in range(N // 2):
+            letal += idade[N - i - 1] - idade[i]
+            
+        #a primeira parte ira pegar o par mais alto da lista, a segunda ira representar a menor parte.
+         #o -1 e so para ele pegar o indice certo da onde esta o virus atualemtne
+        print(letal)
+        
+    except EOFError:
+        break
